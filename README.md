@@ -23,13 +23,13 @@ Mettre en pratique les bases de Java :
 
 ---
 
-## Structure du projet
+## Arborescence du projet
 
 ```
 TP_Java/
 ├── Book.java        // Classe représentant un livre
-├── TestRunner.java  // Classe principale pour tester le programme
-├── build/           // Dossier contenant les fichiers compilés
+├── Library.java     // Classe représentant la bibliothèque
+├── Menu.java        // Point d'entrée / menu de gestion
 └── README.md
 ```
 
@@ -49,13 +49,13 @@ TP_Java/
 ### 1. Compiler
 
 ```bash
-javac Book.java TestRunner.java -d build
+ javac *.java -d build
 ```
 
 ### 2. Exécuter
 
 ```bash
-java -cp build TestRunner
+java -cp build Menu
 ```
 
 ---

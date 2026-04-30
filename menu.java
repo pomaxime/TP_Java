@@ -5,14 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        Bibliotheque bibliotheque = new Bibliotheque();
-
-        bibliotheque.ajouterUtilisateur("U001", "Alice Martin");
-        bibliotheque.ajouterUtilisateur("U002", "Bob Dupont");
-
-        bibliotheque.ajouterLivre("L001", "Les Misérables", "Victor Hugo");
-        bibliotheque.ajouterLivre("L002", "Le Petit Prince", "Antoine de Saint-Exupéry");
-        bibliotheque.ajouterLivre("L003", "L'Étranger", "Albert Camus");
+        Bibliotheque library = new Library();
 
         System.out.println("Données de démonstration chargées.");
 
@@ -57,13 +50,14 @@ public class Main {
                 System.out.print("Auteur : ");
                 String auteur = scanner.nextLine();
                 try {
-                    bibliotheque.ajouterLivre(id, titre, auteur);
+                    Book book = new Book(titre, auteur, id);
+                    library.addBook(book);
                 } catch (IllegalArgumentException e) {
                     System.out.println("Erreur : " + e.getMessage());
                 }
 
             } else if (choix == 2) {
-                bibliotheque.afficherLivres();
+                library.displayBooks();
 
             } else if (choix == 3) {
                 System.out.print("ID du livre : ");
@@ -71,7 +65,7 @@ public class Main {
                 System.out.print("ID utilisateur : ");
                 String userId = scanner.nextLine();
                 try {
-                    bibliotheque.emprunterLivre(livreId, userId);
+                    library.emprunterLivre(livreId, userId);
                 } catch (IllegalArgumentException | IllegalStateException e) {
                     System.out.println("Erreur : " + e.getMessage());
                 }
@@ -82,7 +76,7 @@ public class Main {
                 System.out.print("ID utilisateur : ");
                 String userId = scanner.nextLine();
                 try {
-                    bibliotheque.retournerLivre(livreId, userId);
+                    library.retournerLivre(livreId, userId);
                 } catch (IllegalArgumentException | IllegalStateException e) {
                     System.out.println("Erreur : " + e.getMessage());
                 }
@@ -93,21 +87,21 @@ public class Main {
                 System.out.print("Nom : ");
                 String nom = scanner.nextLine();
                 try {
-                    bibliotheque.ajouterUtilisateur(id, nom);
+                    library.addUser(id, nom);
                 } catch (IllegalArgumentException e) {
                     System.out.println("Erreur : " + e.getMessage());
                 }
 
             } else if (choix == 6) {
-                bibliotheque.afficherUtilisateurs();
+                library.displayUsers();
 
             } else if (choix == 7) {
                 System.out.print("Titre ou auteur : ");
                 String motCle = scanner.nextLine();
-                bibliotheque.rechercherLivre(motCle);
+                library.searchBooks(motCle);
 
             } else if (choix == 8) {
-                bibliotheque.afficherDisponibles();
+                library.displayAvailableBooks();
 
             } else if (choix == 0) {
                 System.out.println("Au revoir !");

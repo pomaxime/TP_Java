@@ -1,5 +1,7 @@
 # TP_Java - Bibliothèque
 
+<small><em>Réalisé par Aune Amaury, Lemoine Benjamin et Poyet Maxime</em></small>
+
 ---
 
 ## Sommaire

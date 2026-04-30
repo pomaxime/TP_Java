@@ -1,6 +1,7 @@
 import java.util.ArrayList;
+import java.util.List;
 
-public abstract class Book {
+public class Book {
     private String title;
     private String author;
     private int id;
@@ -38,6 +39,16 @@ public abstract class Book {
         this.borrowed = borrowed;
     }
 
+    public static String ShowBook() {
+        StringBuilder res = new StringBuilder();
+        for (Book b : library) {
+            res.append(b).append("\n");
+        }
+        return res.toString();
+    }
 
-
+    @Override
+    public String toString() {
+        return this.title + ", " + this.author + ", " + this.id;
+    }
 }

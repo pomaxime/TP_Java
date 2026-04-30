@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 
 public class Book {
@@ -39,16 +38,11 @@ public class Book {
         this.borrowed = borrowed;
     }
 
-    public static String ShowBook() {
-        StringBuilder res = new StringBuilder();
-        for (Book b : library) {
-            res.append(b).append("\n");
-        }
-        return res.toString();
-    }
-
     @Override
     public String toString() {
-        return this.title + ", " + this.author + ", " + this.id;
+        return "ID: " + id +
+            " | Titre: " + title +
+            " | Auteur: " + author +
+            " | Emprunté: " + (borrowed ? "Oui" : "Non");
     }
 }

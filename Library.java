@@ -1,16 +1,16 @@
+import java.util.ArrayList;
+
 public class Library {
-    private Book book;
 
-    private static ArrayList<Book> library = new ArrayList<>();
-
-    public showBook() {
-        return Library;
-    }
+    private ArrayList<Book> books;
 
     public Library() {
         books = new ArrayList<>();
     }
 
+    public void addBook(Book book) {
+        books.add(book);
+    }
 
     public void borrowBook(int id) {
         try {
@@ -55,6 +55,12 @@ public class Library {
             }
         } catch (Exception e) {
             System.out.println("Erreur : " + e.getMessage());
+        }
+    }
+
+    public void displayBook() {
+        for (Book b : books) {
+            System.out.println(b);
         }
     }
 }

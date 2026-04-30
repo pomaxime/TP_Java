@@ -54,12 +54,13 @@ public class Menu {
                         library.displayBooks();
                         break;
                     
+                    case 3:
                         System.out.print("ID du livre à emprunter : ");
                         int borrowId = scanner.nextInt();
                         scanner.nextLine();
                         library.borrowBook(borrowId);
                         break;
-                
+
                     case 4:
                         System.out.print("ID du livre à retourner : ");
                         int returnId = scanner.nextInt();

@@ -5,10 +5,10 @@ public class Menu {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        public list<Book> library = new ArrayList<>();
+        Library library = new Library();
         int choice = 0;
         System.out.println("=== Bienvenue dans la bibliothèque ===");
-        while (choice != 6) {
+        while (choice != 0) {
 
             System.out.println();
             System.out.println("╔═══════════════════════════════════════╗");
@@ -47,19 +47,21 @@ public class Menu {
                         System.out.print("ID : ");
                         int id = scanner.nextInt();
                         scanner.nextLine();
-                        library.addBook(title, author, id);
+                        Book newBook = new Book(title, author, id);
+                        library.addBook(newBook);
                         break;
                 
                     case 2:
-                        library.displayBooks();
+                        library.displayBook();
                         break;
-                    
+
+                    case 3:
                         System.out.print("ID du livre à emprunter : ");
                         int borrowId = scanner.nextInt();
                         scanner.nextLine();
                         library.borrowBook(borrowId);
                         break;
-                
+
                     case 4:
                         System.out.print("ID du livre à retourner : ");
                         int returnId = scanner.nextInt();
@@ -78,7 +80,7 @@ public class Menu {
                         break;
                     
                     case 7:
-                        system.out.print("Mot-clé : ");
+                        System.out.print("Mot-clé : ");
                         String searchKeyword = scanner.nextLine();
                         library.searchBook(searchKeyword);
                         break;

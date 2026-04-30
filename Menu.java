@@ -6,7 +6,7 @@ public class Menu {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Library library = new Library();
-        int choice = 0;
+        int choice = -1;
         System.out.println("=== Bienvenue dans la bibliothèque ===");
         while (choice != 0) {
 

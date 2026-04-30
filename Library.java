@@ -4,7 +4,7 @@ public class Library {
 
     private ArrayList<Book> books;
     private ArrayList<String[]> users;
-    int nextBookId;
+    private int nextBookId;
 
     public Library() {
         books = new ArrayList<>();
@@ -12,8 +12,8 @@ public class Library {
         nextBookId = 1;
     }
 
-    public void addBook(Book book) {
-        books.add(book);
+    public void addBook(String title, String author) {
+        books.add(new book(title, author, nextBookId++));
     }
 
     public void borrowBook(int id) {

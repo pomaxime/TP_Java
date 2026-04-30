@@ -43,7 +43,7 @@ public class Menu {
                         String title = scanner.nextLine();
                         System.out.print("Auteur : ");
                         String author = scanner.nextLine();
-                        library.addBook(new Book(title, author, library.nextBookId++));
+                        library.addBook(title, author);
                         break;
                 
                     case 2:

@@ -13,7 +13,7 @@ public class Library {
     }
 
     public void addBook(String title, String author) {
-        books.add(new book(title, author, nextBookId++));
+        books.add(new Book(title, author, nextBookId++));
     }
 
     public void borrowBook(int id) {

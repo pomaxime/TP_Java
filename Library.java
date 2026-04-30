@@ -63,4 +63,19 @@ public class Library {
             System.out.println(b);
         }
     }
+
+    public void searchBook(String keyword) {
+        System.out.println("=== Résultats de la recherche ===");
+        boolean found = false;
+        for (int i = 0; i < books.size(); i++) {
+            if (books.get(i).getTitle().toLowerCase().contains(keyword.toLowerCase())) {
+                System.out.println(books.get(i));
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("Aucun livre trouvé.");
+        }
+    }
+
 }

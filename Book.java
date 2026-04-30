@@ -1,4 +1,3 @@
-import java.util.List;
 
 public class Book {
     private String title;
@@ -11,7 +10,6 @@ public class Book {
         this.author = author;
         this.id = id;
         this.borrowed = false;
-        // library.add(this);
     }
 
     public String getTitle() {
@@ -25,10 +23,6 @@ public class Book {
     public int getId() {
         return id;
     }
-
-    // public static List<Book> getLibrary() {
-    //     return library;
-    // }
 
     public boolean isBorrowed() {
         return borrowed;

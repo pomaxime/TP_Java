@@ -63,8 +63,12 @@ public class Library {
     }
 
     public void displayBooks() {
-        for (Book b : books) {
-            System.out.println(b);
+        if (books.isEmpty()) {
+            System.out.println("Aucun livre à afficher. La bibliothèque est vide.");
+        } else {
+            for (Book b : books) {
+                System.out.println(b);
+            }
         }
     }
 

@@ -11,7 +11,7 @@ public class Menu {
 
             System.out.println();
             System.out.println("╔═══════════════════════════════════════╗");
-            System.out.println("║         📚  BIBLIOTHÈQUE  📚         ║");
+            System.out.println("║         📚  BIBLIOTHÈQUE  📚          ║");
             System.out.println("╠═══════════════════════════════════════╣");
             System.out.println("║  LIVRES                               ║");
             System.out.println("║  1. Ajouter un livre                  ║");

@@ -8,7 +8,7 @@ public class Menu {
         public list<Book> library = new ArrayList<>();
         int choice = 0;
         System.out.println("=== Bienvenue dans la bibliothèque ===");
-        while (choice != 6) {
+        while (choice != 0) {
 
             System.out.println();
             System.out.println("╔═══════════════════════════════════════╗");

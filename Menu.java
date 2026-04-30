@@ -1,10 +1,11 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Menu {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Library library = new Library();
+        public list<Book> library = new ArrayList<>();
         int choice = 0;
         System.out.println("=== Bienvenue dans la bibliothèque ===");
         while (choice != 6) {

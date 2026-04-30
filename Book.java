@@ -1,18 +1,8 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Book {
     private String title;
     private String author;
     private int id;
-    private static List<Book> library = new ArrayList<>();
-
-    public Book() {
-            this.title = "book";
-            this.author = "author";
-            this.id = 0;
-            library.add(this);
-    }
+    private boolean borrowed;
 
     public Book(String title, String author, int id) {
         this.title = title;
@@ -33,16 +23,23 @@ public class Book {
         return this.id;
     }
 
-    public static String ShowBook() {
-        StringBuilder res = new StringBuilder();
-        for (Book b : library) {
-            res.append(b).append("\n");
-        }
-        return res.toString();
+    public static List<Book> getLibrary() {
+        return library;
+    }
+
+    public boolean isBorrowed() {
+        return borrowed;
+    }
+
+    public void setBorrowed(boolean borrowed) {
+        this.borrowed = borrowed;
     }
 
     @Override
     public String toString() {
-        return this.title + ", " + this.author + ", " + this.id;
+        return "ID: " + id +
+            " | Titre: " + title +
+            " | Auteur: " + author +
+            " | Emprunté: " + (borrowed ? "Oui" : "Non");
     }
 }

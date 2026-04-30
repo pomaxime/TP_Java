@@ -5,7 +5,7 @@ public class Menu {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        public list<Book> library = new ArrayList<>();
+        Library library = new Library();
         int choice = 0;
         System.out.println("=== Bienvenue dans la bibliothèque ===");
         while (choice != 0) {
@@ -44,10 +44,7 @@ public class Menu {
                         String title = scanner.nextLine();
                         System.out.print("Auteur : ");
                         String author = scanner.nextLine();
-                        System.out.print("ID : ");
-                        int id = scanner.nextInt();
-                        scanner.nextLine();
-                        library.addBook(title, author, id);
+                        library.addBook(new Book(title, author, library.nextBookId++));
                         break;
                 
                     case 2:
@@ -60,7 +57,7 @@ public class Menu {
                         scanner.nextLine();
                         library.borrowBook(borrowId);
                         break;
-
+                
                     case 4:
                         System.out.print("ID du livre à retourner : ");
                         int returnId = scanner.nextInt();
@@ -69,9 +66,11 @@ public class Menu {
                         break;
                 
                     case 5:
-                        System.out.print("Mot-clé : ");
-                        String keyword = scanner.nextLine();
-                        library.searchBook(keyword);
+                        System.out.print("ID utilisateur : ");
+                        String userId = scanner.nextLine();
+                        System.out.print("Nom : ");
+                        String userName = scanner.nextLine();
+                        library.addUser(userId, userName);
                         break;
                 
                     case 6:
@@ -79,7 +78,7 @@ public class Menu {
                         break;
                     
                     case 7:
-                        system.out.print("Mot-clé : ");
+                        System.out.print("Mot-clé : ");
                         String searchKeyword = scanner.nextLine();
                         library.searchBook(searchKeyword);
                         break;

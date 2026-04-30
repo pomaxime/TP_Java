@@ -6,7 +6,7 @@ public class Menu {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Library library = new Library();
-        int choice = 0;
+        int choice = -1;
         System.out.println("=== Bienvenue dans la bibliothèque ===");
         while (choice != 0) {
 
@@ -44,24 +44,20 @@ public class Menu {
                         String title = scanner.nextLine();
                         System.out.print("Auteur : ");
                         String author = scanner.nextLine();
-                        System.out.print("ID : ");
-                        int id = scanner.nextInt();
-                        scanner.nextLine();
-                        Book newBook = new Book(title, author, id);
-                        library.addBook(newBook);
+                        library.addBook(new Book(title, author, library.nextBookId++));
                         break;
                 
                     case 2:
-                        library.displayBook();
+                        library.displayBooks();
                         break;
-
+                    
                     case 3:
                         System.out.print("ID du livre à emprunter : ");
                         int borrowId = scanner.nextInt();
                         scanner.nextLine();
                         library.borrowBook(borrowId);
                         break;
-
+                
                     case 4:
                         System.out.print("ID du livre à retourner : ");
                         int returnId = scanner.nextInt();
@@ -70,9 +66,11 @@ public class Menu {
                         break;
                 
                     case 5:
-                        System.out.print("Mot-clé : ");
-                        String keyword = scanner.nextLine();
-                        library.searchBook(keyword);
+                        System.out.print("ID utilisateur : ");
+                        String userId = scanner.nextLine();
+                        System.out.print("Nom : ");
+                        String userName = scanner.nextLine();
+                        library.addUser(userId, userName);
                         break;
                 
                     case 6:

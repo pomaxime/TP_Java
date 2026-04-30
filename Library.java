@@ -3,9 +3,13 @@ import java.util.ArrayList;
 public class Library {
 
     private ArrayList<Book> books;
+    private ArrayList<String[]> users;
+    int nextBookId;
 
     public Library() {
         books = new ArrayList<>();
+        users = new ArrayList<>();
+        nextBookId = 1;
     }
 
     public void addBook(Book book) {
@@ -58,9 +62,37 @@ public class Library {
         }
     }
 
-    public void displayBook() {
+    public void displayBooks() {
         for (Book b : books) {
             System.out.println(b);
+        }
+    }
+
+    public void displayAvailableBooks() {
+        boolean found = false;
+        for (int i = 0; i < books.size(); i++) {
+            if (!books.get(i).isBorrowed()) {
+                System.out.println(books.get(i));
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("Aucun livre disponible.");
+        }
+    }
+
+    public void addUser(String id, String nom) {
+        users.add(new String[]{id, nom});
+        System.out.println("Utilisateur ajouté : " + nom);
+    }
+
+    public void displayUsers() {
+        if (users.isEmpty()) {
+            System.out.println("Aucun utilisateur enregistré.");
+            return;
+        }
+        for (int i = 0; i < users.size(); i++) {
+            System.out.println("ID: " + users.get(i)[0] + " | Nom: " + users.get(i)[1]);
         }
     }
 
